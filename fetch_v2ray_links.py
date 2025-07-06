@@ -33,6 +33,5 @@ for link in new_links:
 with open("links.txt", "w", encoding="utf-8") as f:
     for link in sorted(existing_links):
         f.write(link + "\n")
-    f.write(f"\n# Updated at {datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S UTC')}\n")
 
 print(f"{added} new links added, total {len(existing_links)} links saved.")
