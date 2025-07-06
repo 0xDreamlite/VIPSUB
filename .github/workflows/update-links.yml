@@ -21,7 +21,7 @@ jobs:
       run: pip install requests
 
     - name: Run fetch script
-      run: python fetch_v2ray_links.py
+      run: python py/fetch_v2ray_links.py
 
     - name: Commit changes
       run: |
