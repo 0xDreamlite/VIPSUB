@@ -2,7 +2,7 @@ import requests
 import re
 
 URL = "https://hermes--co.com/connectionsws?os_id=2"
-OUTPUT_FILE = "links.txt"
+OUTPUT_FILE = "sub.txt"
 
 def fetch_links():
     response = requests.get(URL)
