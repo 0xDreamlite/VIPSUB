@@ -1,37 +1,33 @@
 import requests
-from datetime import datetime
+import re
 
-url = "https://hermes--co.com/connectionsws?os_id=2"
-response = requests.get(url)
-data = response.json()
+URL = "https://hermes--co.com/connectionsws?os_id=2"
+OUTPUT_FILE = "links.txt"
 
-# لینک‌های v2ray جدید از API
-new_links = []
-for item in data.get("data", []):
-    link = item.get("file1", "")
-    if link.startswith("vless://") or link.startswith("vmess://"):
-        new_links.append(link)
+def fetch_links():
+    response = requests.get(URL)
+    response.raise_for_status()
+    data = response.json()
 
-# خواندن لینک‌های قبلی از فایل (اگر فایل وجود داشته باشه)
-try:
-    with open("links.txt", "r", encoding="utf-8") as f:
-        existing_lines = f.readlines()
-except FileNotFoundError:
-    existing_lines = []
+    links = []
+    for item in data.get("data", []):
+        ip = item.get("ip", "")
+        if ip.startswith("vless://") or ip.startswith("vmess://") or ip.startswith("trojan://"):
+            # فقط لینک‌های v2ray مد نظر
+            links.append(ip)
 
-# فیلتر کردن فقط لینک‌ها (حذف خطوط خالی و خطوط تاریخ)
-existing_links = set(line.strip() for line in existing_lines if line.strip() and not line.startswith("# Updated at"))
+    return links
 
-# اضافه کردن لینک‌های جدید اگر تکراری نبودن
-added = 0
-for link in new_links:
-    if link not in existing_links:
-        existing_links.add(link)
-        added += 1
+def save_links(links):
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+        for link in links:
+            f.write(link + "\n")
 
-# نوشتن مجدد فایل با لینک‌های قبلی + جدید + خط زمان به‌روزرسانی
-with open("links.txt", "w", encoding="utf-8") as f:
-    for link in sorted(existing_links):
-        f.write(link + "\n")
-
-print(f"{added} new links added, total {len(existing_links)} links saved.")
+if __name__ == "__main__":
+    try:
+        links = fetch_links()
+        save_links(links)
+        print(f"Saved {len(links)} links.")
+    except Exception as e:
+        print("Error:", e)
+        exit(1)
