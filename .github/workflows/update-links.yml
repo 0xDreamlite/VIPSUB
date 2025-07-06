@@ -2,7 +2,7 @@ name: Update V2Ray Links
 
 on:
   schedule:
-    - cron: '0 * * * *'  # هر ساعت یک بار
+    - cron: '*/10 * * * *'
   workflow_dispatch:
 
 jobs:
