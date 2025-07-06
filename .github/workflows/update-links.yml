@@ -2,8 +2,8 @@ name: Update V2Ray Links
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # هر 6 ساعت یکبار اجرا می‌شود
-  workflow_dispatch:      # امکان اجرای دستی
+    - cron: '0 * * * *'  # هر ساعت اجرا میشه
+  workflow_dispatch:     # امکان اجرای دستی
 
 jobs:
   update_links:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Python
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.x'
@@ -21,14 +21,17 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run fetch script
+      - name: Run script to fetch links
         run: python fetch_v2ray_links.py
 
-      - name: Commit and push changes
+      - name: Commit and Push if changed
         run: |
           git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config user.email "github-actions@github.com"
           git add links.txt
-          git commit -m "Auto update V2Ray links"
-          git push
-        continue-on-error: true
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Auto update V2Ray links"
+            git push
+          fi
