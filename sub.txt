@@ -1,3 +1,4 @@
 vless://cbd3ce68-352d-4d3a-8589-0576b4068dea@v1.net2eset.com:10096?type=ws&path=%2F&host=&security=none#MEGA%20VPN-8veuuaeyw
 vless://0b526fbf-3605-42ff-b525-183453b7177e@v2.net2eset.com:57546?type=ws&path=%2F&host=&security=none#MEGA%20VPN-r21om4g01
 vless://e5d69947-1c36-416a-d2f8-cc470d77a297@92.242.198.30:55264?type=ws&path=%2F&host=&security=none#%D8%A2%D9%85%D8%A7%D8%AF%D9%87-w7sfvye7b
+vless://e87d4a88-cd28-4c07-aced-f07b9b3bab59@45.129.36.171:47093?type=ws&path=%2F&host=&security=none#%F0%9F%93%B209146703034_armin-xdel1bqai
