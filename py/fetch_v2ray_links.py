@@ -1,33 +1,45 @@
 import requests
-import re
+import os
 
 URL = "https://hermes--co.com/connectionsws?os_id=2"
 OUTPUT_FILE = "sub.txt"
 
 def fetch_links():
-    response = requests.get(URL)
+    headers = {
+        "User-Agent": "Mozilla/5.0"
+    }
+    response = requests.get(URL, headers=headers)
     response.raise_for_status()
     data = response.json()
 
     links = []
     for item in data.get("data", []):
         ip = item.get("ip", "")
-        if ip.startswith("vless://") or ip.startswith("vmess://") or ip.startswith("trojan://"):
-            # فقط لینک‌های v2ray مد نظر
+        if ip.startswith(("vless://", "vmess://", "trojan://")):
             links.append(ip)
-
     return links
 
 def save_links(links):
-    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    # خواندن لینک‌های قبلی (در صورت وجود)
+    if os.path.exists(OUTPUT_FILE):
+        with open(OUTPUT_FILE, "r", encoding="utf-8") as f:
+            existing = set(line.strip() for line in f.readlines())
+    else:
+        existing = set()
+
+    # فقط لینک‌های جدید رو اضافه کن
+    with open(OUTPUT_FILE, "a", encoding="utf-8") as f:
+        new_count = 0
         for link in links:
-            f.write(link + "\n")
+            if link not in existing:
+                f.write(link + "\n")
+                new_count += 1
+        print(f"Added {new_count} new links.")
 
 if __name__ == "__main__":
     try:
         links = fetch_links()
         save_links(links)
-        print(f"Saved {len(links)} links.")
     except Exception as e:
         print("Error:", e)
         exit(1)
