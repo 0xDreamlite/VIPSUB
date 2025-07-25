@@ -8,7 +8,7 @@ def fetch_links():
     headers = {
         "User-Agent": "Mozilla/5.0"
     }
-    response = requests.get(URL, headers=headers)
+    response = requests.get(URL, headers=headers, verify=False)
     response.raise_for_status()
     data = response.json()
 
