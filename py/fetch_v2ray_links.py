@@ -1,5 +1,8 @@
 import requests
 import os
+import urllib3
+
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 URL = "https://hermes--co.com/connectionsws?os_id=2"
 OUTPUT_FILE = "sub.txt"
