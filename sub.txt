@@ -12,3 +12,6 @@ vless://92881e50-01dc-4842-cdfd-99a859c46980@185.214.101.179:33948?type=ws&path=
 vmess://ewogICJ2IjogIjIiLAogICJwcyI6ICIzLWJjMzU5b2xpdyIsCiAgImFkZCI6ICI1LjI1My4xOTEuMjMzIiwKICAicG9ydCI6IDU0NDk2LAogICJpZCI6ICI1YjM3MjNlMS1kMGYyLTQ4N2EtYmM5MC0xNjFmZDA4NWQyMzEiLAogICJuZXQiOiAidGNwIiwKICAidHlwZSI6ICJub25lIiwKICAidGxzIjogIm5vbmUiCn0=
 vless://2d5c9a29-581a-4f39-e46a-80da56fbf6cd@v11.net2eset.com:23663?type=ws&path=%2F&host=&security=none#MEGA-46w324e0
 vless://2d5c9a29-581a-4f39-e46a-80da56fbf6cd@v11.net2eset.com:23663?type=ws&path=%2F&host=&security=none#MEGA-46w324e0
+vless://a94eb980-1253-4d98-8b05-9e55fbf7c094@v11.net2eset.com:21665?type=grpc&serviceName=&authority=&security=none#MEGA-t5cpgcuc
+vless://a94eb980-1253-4d98-8b05-9e55fbf7c094@v11.net2eset.com:21665?type=grpc&serviceName=&authority=&security=none#MEGA-t5cpgcuc
+vless://a94eb980-1253-4d98-8b05-9e55fbf7c094@v11.net2eset.com:21665?type=grpc&serviceName=&authority=&security=none#MEGA-t5cpgcuc
