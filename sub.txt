@@ -15,3 +15,6 @@ vless://2d5c9a29-581a-4f39-e46a-80da56fbf6cd@v11.net2eset.com:23663?type=ws&path
 vless://a94eb980-1253-4d98-8b05-9e55fbf7c094@v11.net2eset.com:21665?type=grpc&serviceName=&authority=&security=none#MEGA-t5cpgcuc
 vless://a94eb980-1253-4d98-8b05-9e55fbf7c094@v11.net2eset.com:21665?type=grpc&serviceName=&authority=&security=none#MEGA-t5cpgcuc
 vless://a94eb980-1253-4d98-8b05-9e55fbf7c094@v11.net2eset.com:21665?type=grpc&serviceName=&authority=&security=none#MEGA-t5cpgcuc
+vless://eceac26c-4505-4d57-992c-0759c3125833@v12.net2eset.com:29268?type=tcp&security=none#MEGA1-vsxlfqj1
+vless://ca6e83e7-fde4-4c56-d621-b41f0d271aba@v12.net2eset.com:20951?type=ws&path=%2F&host=&security=none#MEGA%203-frut05i2
+vless://324f0300-e658-42a5-f9aa-7385de14859c@v12.net2eset.com:48733?type=grpc&serviceName=&authority=&security=none#MEGA%202-ctsw2l09
