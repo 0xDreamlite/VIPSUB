@@ -27,6 +27,6 @@ jobs:
       run: |
         git config user.name "github-actions"
         git config user.email "actions@github.com"
-        git add sub.txt
+        git add subx.txt
         git diff --cached --quiet || git commit -m "Auto update V2Ray links"
         git push
