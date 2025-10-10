@@ -5,7 +5,7 @@ import urllib3
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 URL = "https://hermes--co.com/connectionsws?os_id=2"
-OUTPUT_FILE = "sub.txt"
+OUTPUT_FILE = "subx.txt"
 
 def fetch_links():
     headers = {
